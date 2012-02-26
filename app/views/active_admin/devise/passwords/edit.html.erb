@@ -10,7 +10,7 @@
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.submit "Change my password" %></p>
+  <p><%= f.submit I18n.t("active_admin.devise.change_password") %></p>
 <% end %>
 
 <%= render :partial => "active_admin/devise/shared/links" %>
