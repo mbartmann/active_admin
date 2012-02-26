@@ -29,6 +29,11 @@ en:
     less_than: "Less Than"
     main_content: "Please implement %{model}#main_content to display content."
     logout: "Logout"
+    sign_in: "Sign In"
+    sign_up: "Sign Up"
+    forgot_password: "Forgot your password?"
+    resend_unlock_instructions: "Didn't receive unlock instructions?"
+    resend_confirmation_instructions: "Didn't receive confirmation instructions?"
     sidebars:
       filters: "Filters"
     pagination:
