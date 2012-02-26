@@ -27,12 +27,16 @@ de:
     greater_than: "Größer als"
     less_than: "Kleiner als"
     main_content: "Bitte implementieren Sie %{model}#main_content, um Inhalte anzuzeigen."
-    logout: "Abmelden"
-    sign_in: "Anmelden"
-    sign_up: "Registrieren"
-    forgot_password: "Passwort vergessen?"
-    resend_unlock_instructions: "Instruktionen zum Aktivieren des Accounts nicht erhalten?"
-    resend_confirmation_instructions: "Instruktionen zum Bestätigen des Accounts nicht erhalten?"
+    devise:
+      login: "Login"
+      logout: "Abmelden"
+      sign_in: "Anmelden"
+      sign_up: "Registrieren"
+      forgot_password: "Passwort vergessen?"
+      resend_confirmation_instructions: "Instruktionen zum Bestätigen des Accounts nicht erhalten?"
+      resend_unlock_instructions: "Instruktionen zum Aktivieren des Accounts nicht erhalten?"
+      change_password: "Passwort ändern"
+      reset_password: "Passwort zurücksetzen"
     sidebars:
       filters: "Filter"
     pagination:

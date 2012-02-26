@@ -28,12 +28,17 @@ en:
     greater_than: "Greater Than"
     less_than: "Less Than"
     main_content: "Please implement %{model}#main_content to display content."
-    logout: "Logout"
-    sign_in: "Sign In"
-    sign_up: "Sign Up"
-    forgot_password: "Forgot your password?"
-    resend_unlock_instructions: "Didn't receive unlock instructions?"
-    resend_confirmation_instructions: "Didn't receive confirmation instructions?"
+    devise:
+      login: "Login"
+      logout: "Logout"
+      sign_in: "Sign In"
+      sign_up: "Sign Up"
+      forgot_password: "Forgot your password?"
+      resend_confirmation_instructions: "Didn't receive confirmation instructions?"
+      resend_unlock_instructions: "Didn't receive unlock instructions?"
+      change_password: "Change My Password"
+      reset_password: "Reset My Password"
+      resend_unlock_instructions_action: "Resend unlock instructions"
     sidebars:
       filters: "Filters"
     pagination:
