@@ -27,6 +27,7 @@ de:
     greater_than: "Größer als"
     less_than: "Kleiner als"
     main_content: "Bitte implementieren Sie %{model}#main_content, um Inhalte anzuzeigen."
+    logout: "Logout"
     devise:
       login: "Login"
       logout: "Abmelden"
@@ -37,6 +38,7 @@ de:
       resend_unlock_instructions: "Instruktionen zum Aktivieren des Accounts nicht erhalten?"
       change_password: "Passwort ändern"
       reset_password: "Passwort zurücksetzen"
+      resend_unlock_instructions_action: "Instruktionen senden"
     sidebars:
       filters: "Filter"
     pagination:

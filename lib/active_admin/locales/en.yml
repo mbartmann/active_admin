@@ -28,6 +28,7 @@ en:
     greater_than: "Greater Than"
     less_than: "Less Than"
     main_content: "Please implement %{model}#main_content to display content."
+    logout: "Logout"
     devise:
       login: "Login"
       logout: "Logout"
