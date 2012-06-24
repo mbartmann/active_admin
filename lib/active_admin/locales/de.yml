@@ -53,6 +53,17 @@ de:
     blank_slate:
       content: "Es gibt noch keine %{resource_name}."
       link: "Erstellen"
+    batch_actions:
+      button_label: "Batch Actions"
+      delete_confirmation: "Sind Sie sicher das Sie diese %{plural_model} entfernen möchten? Der Vorgang kann nicht Rückgängig gemacht werden."
+      succesfully_destroyed:
+        one: "Erfolgreich 1 %{model} gelöscht"
+        other: "Erfolgreich %{count} %{plural_model} gelöscht"
+      selection_toggle_explanation: "(Toggle Selection)"
+      link: "Erstellen"
+      action_label: "%{title} Ausgewählt"
+      labels:
+        destroy: "Löschen"
     comments:
       body: "Inhalt"
       author: "Autor"
