@@ -85,10 +85,7 @@ module ActiveAdminIntegrationSpecHelper
 end
 
 ENV['RAILS_ENV'] = 'test'
-
-require 'detect_rails_version'
-rails_version = detect_rails_version
-ENV['RAILS_ROOT'] = File.expand_path("../rails/rails-#{rails_version}", __FILE__)
+ENV['RAILS_ROOT'] = File.expand_path("../rails/rails-#{ENV['RAILS']}", __FILE__)
 
 # Create the test app if it doesn't exists
 unless File.exists?(ENV['RAILS_ROOT'])
@@ -101,6 +98,7 @@ require 'active_admin'
 ActiveAdmin.application.load_paths = [ENV['RAILS_ROOT'] + "/app/admin"]
 
 require ENV['RAILS_ROOT'] + '/config/environment'
+
 require 'rspec/rails'
 
 # Setup Some Admin stuff for us to play with
@@ -160,3 +158,7 @@ RSpec::Matchers.define :have_tag do |*args|
     end
   end
 end
+
+# improve the performance of the specs suite by not logging anything
+# see http://blog.plataformatec.com.br/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/
+Rails.logger.level = 4

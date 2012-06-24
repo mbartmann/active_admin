@@ -57,6 +57,12 @@ module ActiveAdmin
     # The method to use when generating the link for user logout
     inheritable_setting :logout_link_method, :get
 
+    # Whether the batch actions are enabled or not
+    inheritable_setting :batch_actions, true
+
+    # The namespace root.
+    inheritable_setting :root_to, 'dashboard#index'
+
     # Active Admin makes educated guesses when displaying objects, this is
     # the list of methods it tries calling in order
     setting :display_name_methods, [ :display_name,
