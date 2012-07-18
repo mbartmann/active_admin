@@ -61,7 +61,7 @@ de:
         other: "Erfolgreich %{count} %{plural_model} gelöscht"
       selection_toggle_explanation: "(Toggle Selection)"
       link: "Erstellen"
-      action_label: "%{title} Ausgewählt"
+      action_label: "Ausgewählte %{title}"
       labels:
         destroy: "Löschen"
     comments:
