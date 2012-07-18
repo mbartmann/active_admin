@@ -1,12 +1,10 @@
-require 'spec_helper' 
+require 'spec_helper'
 
 describe ActiveAdmin::FormBuilder do
 
-  setup_arbre_context!
-
   # Setup an ActionView::Base object which can be used for
   # generating the form for.
-  let(:helpers) do 
+  let(:helpers) do
     view = action_view
     def view.posts_path
       "/posts"
@@ -31,9 +29,12 @@ describe ActiveAdmin::FormBuilder do
     view
   end
 
-  def build_form(options = {}, &block)
-    options.merge!({:url => posts_path})
-    active_admin_form_for Post.new, options, &block
+  def build_form(options = {}, form_object = Post.new, &block)
+    options.merge!({:url => helpers.posts_path})
+
+    render_arbre_component({:form_object => form_object, :form_options => options, :form_block => block}, helpers)do
+      text_node active_admin_form_for(assigns[:form_object], assigns[:form_options], &assigns[:form_block])
+    end.to_s
   end
 
   context "in general with actions" do
@@ -104,7 +105,7 @@ describe ActiveAdmin::FormBuilder do
     it "should raise error" do
       lambda {
         comment = ActiveAdmin::Comment.new
-        active_admin_form_for comment, :url => "admins/comments" do |f|
+        build_form({:url => "admins/comments"}, comment) do |f|
           f.inputs :resource
         end
       }.should raise_error(Formtastic::PolymorphicInputWithoutCollectionError)
@@ -293,12 +294,12 @@ describe ActiveAdmin::FormBuilder do
   end
 
 
-  { 
-    "input :title, :as => :string"        => /id\=\"post_title\"/,
-    "input :title, :as => :text"          => /id\=\"post_title\"/,
-    "input :created_at, :as => :time"     => /id\=\"post_created_at_2i\"/,
-    "input :created_at, :as => :datetime" => /id\=\"post_created_at_2i\"/,
-    "input :created_at, :as => :date"     => /id\=\"post_created_at_2i\"/,
+  {
+    "input :title, :as => :string"               => /id\=\"post_title\"/,
+    "input :title, :as => :text"                 => /id\=\"post_title\"/,
+    "input :created_at, :as => :time_select"     => /id\=\"post_created_at_2i\"/,
+    "input :created_at, :as => :datetime_select" => /id\=\"post_created_at_2i\"/,
+    "input :created_at, :as => :date_select"     => /id\=\"post_created_at_2i\"/,
   }.each do |source, regex|
    it "should properly buffer #{source}" do
      body = build_form do |f|
